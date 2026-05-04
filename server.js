@@ -1,8 +1,11 @@
 const express = require("express");
 const path = require("path");
 
+const config = require("./config.example");
+
 const app = express();
-const PORT = process.env.PORT || 3000;
+
+const PORT = config.port;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
