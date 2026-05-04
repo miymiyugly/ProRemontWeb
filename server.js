@@ -1,5 +1,6 @@
 const express = require("express");
 const path = require("path");
+const { ProxyAgent, fetch: undiciFetch } = require("undici");
 
 const config = require("./config");
 
@@ -8,6 +9,8 @@ const app = express();
 const PORT = config.port;
 const BOT_TOKEN = config.BOT_TOKEN;
 const CHAT_IDS = Array.isArray(config.userIds) ? config.userIds : [];
+const TG_PROXY = config.telegramProxy || "";
+const tgDispatcher = TG_PROXY ? new ProxyAgent(TG_PROXY) : undefined;
 
 // Экранирование для Telegram MarkdownV2
 function escapeMd(text) {
@@ -51,6 +54,7 @@ function buildTelegramMessage({ name, phone, message, variant }) {
   if (message && String(message).trim()) {
     lines.push("");
     lines.push("💬 *Комментарий:*");
+    lines.push("");
     lines.push(`_${escapeMd(String(message).trim())}_`);
   }
 
@@ -72,7 +76,7 @@ async function sendTelegramNotification(payload) {
   await Promise.all(
     CHAT_IDS.map(async (chatId) => {
       try {
-        const r = await fetch(url, {
+        const r = await undiciFetch(url, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
@@ -81,6 +85,7 @@ async function sendTelegramNotification(payload) {
             parse_mode: "MarkdownV2",
             disable_web_page_preview: true,
           }),
+          dispatcher: tgDispatcher,
         });
         if (!r.ok) {
           const body = await r.text().catch(() => "");
@@ -89,7 +94,11 @@ async function sendTelegramNotification(payload) {
           );
         }
       } catch (e) {
-        console.error(`[telegram] chat ${chatId} error:`, e.message);
+        console.error(
+          `[telegram] chat ${chatId} error:`,
+          e.message,
+          e.cause && (e.cause.code || e.cause.message),
+        );
       }
     }),
   );
