@@ -1,0 +1,733 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0a0a0a" />
+    <meta
+      name="description"
+      content="Про-Ремонт — ремонт квартир, частных домов и коммерческих помещений под ключ. Более 15 лет опыта, прозрачная смета, договор, гарантия от 3 лет."
+    />
+    <title>Про-Ремонт — ремонт квартир и помещений под ключ</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/jpeg" href="/logo.jpg" />
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <!-- ===== HEADER ===== -->
+    <header class="header" id="header">
+      <div class="container header__inner">
+        <a href="#home" class="logo" aria-label="Про-Ремонт — на главную">
+          <img src="/logo.jpg" alt="Про-Ремонт" class="logo__img" />
+          <span>
+            <span class="logo__text">ПРО-РЕМОНТ</span>
+            <span class="logo__sub">Ремонт под ключ</span>
+          </span>
+        </a>
+
+        <nav class="nav" id="nav">
+          <a href="#advantages" class="nav__link">Преимущества</a>
+          <a href="#services" class="nav__link">Услуги</a>
+          <a href="#pricing" class="nav__link">Стоимость</a>
+          <a href="#gallery" class="nav__link">Работы</a>
+          <a href="#contact" class="nav__link">Контакты</a>
+        </nav>
+
+        <a href="tel:+79010072227" class="header__phone">
+          <svg
+            viewBox="0 0 24 24"
+            width="18"
+            height="18"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path
+              d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"
+            />
+          </svg>
+          +7 901 007-22-27
+        </a>
+
+        <button
+          class="burger"
+          id="burger"
+          aria-label="Меню"
+          aria-expanded="false"
+        >
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="home">
+      <div class="hero__bg" aria-hidden="true"></div>
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <span class="badge">Более 15 лет опыта</span>
+          <h1 class="hero__title">
+            Ремонт квартир, частных домов<br />
+            и коммерческих помещений
+            <span class="accent">под ключ</span>
+          </h1>
+          <p class="hero__text">
+            Берём на себя организацию всех текущих вопросов в процессе работы.
+            Прозрачная смета, договор и гарантия на все виды работ от 3 лет.
+          </p>
+
+          <div class="hero__actions">
+            <button class="btn btn--primary" data-open-modal>
+              Связаться с нами
+            </button>
+            <a href="#pricing" class="btn btn--ghost">Рассчитать стоимость</a>
+          </div>
+
+          <div class="hero__gift">
+            <svg
+              viewBox="0 0 24 24"
+              width="22"
+              height="22"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <polyline points="20 12 20 22 4 22 4 12" />
+              <rect x="2" y="7" width="20" height="5" />
+              <line x1="12" y1="22" x2="12" y2="7" />
+              <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z" />
+              <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z" />
+            </svg>
+            <span>Клининг после ремонта — <strong>в подарок</strong></span>
+          </div>
+        </div>
+
+        <div class="hero__stats">
+          <div class="stat">
+            <div class="stat__num">15+</div>
+            <div class="stat__label">лет опыта</div>
+          </div>
+          <div class="stat">
+            <div class="stat__num">3+</div>
+            <div class="stat__label">года гарантии</div>
+          </div>
+          <div class="stat">
+            <div class="stat__num">100%</div>
+            <div class="stat__label">прозрачная смета</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ADVANTAGES ===== -->
+    <section class="section" id="advantages">
+      <div class="container">
+        <div class="section__head">
+          <span class="section__kicker">Почему мы</span>
+          <h2 class="section__title">Наши преимущества</h2>
+        </div>
+
+        <div class="grid grid--4">
+          <article class="card">
+            <div class="card__icon">
+              <svg
+                viewBox="0 0 24 24"
+                width="28"
+                height="28"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path
+                  d="M12 2 4 5v6c0 5 3.5 9.5 8 11 4.5-1.5 8-6 8-11V5l-8-3z"
+                />
+                <path d="m9 12 2 2 4-4" />
+              </svg>
+            </div>
+            <h3 class="card__title">Гарантия от 3 лет</h3>
+            <p class="card__text">
+              Официальная гарантия на все виды работ — отвечаем за качество
+              долго после сдачи объекта.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card__icon">
+              <svg
+                viewBox="0 0 24 24"
+                width="28"
+                height="28"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path
+                  d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                />
+                <polyline points="14 2 14 8 20 8" />
+                <line x1="9" y1="13" x2="15" y2="13" />
+                <line x1="9" y1="17" x2="13" y2="17" />
+              </svg>
+            </div>
+            <h3 class="card__title">Договор и смета</h3>
+            <p class="card__text">
+              Прозрачные условия и фиксированная стоимость. Никаких скрытых
+              платежей и неожиданных доплат.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card__icon">
+              <svg
+                viewBox="0 0 24 24"
+                width="28"
+                height="28"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <circle cx="12" cy="12" r="10" />
+                <polyline points="12 6 12 12 16 14" />
+              </svg>
+            </div>
+            <h3 class="card__title">Соблюдение сроков</h3>
+            <p class="card__text">
+              Сдаём объекты точно в срок, прописанный в договоре. Контроль на
+              каждом этапе.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card__icon">
+              <svg
+                viewBox="0 0 24 24"
+                width="28"
+                height="28"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M20 7h-9" />
+                <path d="M14 17H5" />
+                <circle cx="17" cy="17" r="3" />
+                <circle cx="7" cy="7" r="3" />
+              </svg>
+            </div>
+            <h3 class="card__title">Полная организация</h3>
+            <p class="card__text">
+              Закупка материалов, логистика, координация бригад — все текущие
+              вопросы решаем сами.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SERVICES ===== -->
+    <section class="section section--alt" id="services">
+      <div class="container">
+        <div class="section__head">
+          <span class="section__kicker">Что делаем</span>
+          <h2 class="section__title">Виды ремонта</h2>
+        </div>
+
+        <div class="grid grid--3">
+          <article class="service">
+            <div class="service__num">01</div>
+            <h3 class="service__title">Квартиры</h3>
+            <p class="service__text">
+              Полный цикл ремонта квартир: от студий до многокомнатных.
+              Косметический, капитальный и дизайнерский ремонт под ключ.
+            </p>
+          </article>
+          <article class="service">
+            <div class="service__num">02</div>
+            <h3 class="service__title">Частные дома</h3>
+            <p class="service__text">
+              Внутренняя и наружная отделка, инженерные сети, утепление и
+              фасадные работы. Работаем с любыми площадями.
+            </p>
+          </article>
+          <article class="service">
+            <div class="service__num">03</div>
+            <h3 class="service__title">Коммерческие помещения</h3>
+            <p class="service__text">
+              Офисы, шоурумы, магазины, кафе. Учитываем требования к
+              зонированию, вентиляции и срокам открытия.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PRICING ===== -->
+    <section class="section" id="pricing">
+      <div class="container">
+        <div class="section__head">
+          <span class="section__kicker">Прозрачные цены</span>
+          <h2 class="section__title">
+            Готовы просчитать стоимость в&nbsp;нескольких вариантах
+          </h2>
+          <p class="section__sub">
+            Выберите подходящий формат — мы подготовим детальный расчёт.
+          </p>
+        </div>
+
+        <div class="grid grid--4 pricing">
+          <article class="plan">
+            <div class="plan__head">
+              <span class="plan__tag">Вариант 1</span>
+              <h3 class="plan__title">Только работы</h3>
+            </div>
+            <p class="plan__text">
+              Стоимость работ бригады. Материалы вы закупаете самостоятельно по
+              нашему списку.
+            </p>
+            <button
+              class="btn btn--ghost btn--full"
+              data-open-modal
+              data-variant="Только работы"
+            >
+              Рассчитать
+            </button>
+          </article>
+
+          <article class="plan">
+            <div class="plan__head">
+              <span class="plan__tag">Вариант 2</span>
+              <h3 class="plan__title">Работы + черновой материал</h3>
+            </div>
+            <p class="plan__text">
+              Включает все черновые материалы: смеси, профили, провода, трубы,
+              утеплители и&nbsp;т.&nbsp;д.
+            </p>
+            <button
+              class="btn btn--ghost btn--full"
+              data-open-modal
+              data-variant="Работы + черновой материал"
+            >
+              Рассчитать
+            </button>
+          </article>
+
+          <article class="plan plan--featured">
+            <div class="plan__head">
+              <span class="plan__tag">Популярный</span>
+              <h3 class="plan__title">Работы + черновой и чистовой материал</h3>
+            </div>
+            <p class="plan__text">
+              Полный комплект материалов до финиша: плитка, обои, ламинат,
+              краска, сантехника, светильники.
+            </p>
+            <button
+              class="btn btn--primary btn--full"
+              data-open-modal
+              data-variant="Работы + черновой и чистовой материал"
+            >
+              Рассчитать
+            </button>
+          </article>
+
+          <article class="plan">
+            <div class="plan__head">
+              <span class="plan__tag">Вариант 4</span>
+              <h3 class="plan__title">Работы + материалы + мебель</h3>
+            </div>
+            <p class="plan__text">
+              Ремонт «под въезд»: материалы, кухня, шкафы, техника, текстиль.
+              Заходите и живёте.
+            </p>
+            <button
+              class="btn btn--ghost btn--full"
+              data-open-modal
+              data-variant="Работы + материалы + мебель"
+            >
+              Рассчитать
+            </button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== GALLERY ===== -->
+    <section class="section section--alt" id="gallery">
+      <div class="container">
+        <div class="section__head">
+          <span class="section__kicker">Портфолио</span>
+          <h2 class="section__title">Наши работы</h2>
+          <p class="section__sub">
+            Фотографии завершённых объектов — обновляем регулярно.
+          </p>
+        </div>
+
+        <div class="gallery gallery--preview" id="gallery-grid">
+          <figure
+            class="gallery__item"
+            data-src="/img/works/1.jpg"
+            data-index="0"
+          ></figure>
+          <figure
+            class="gallery__item"
+            data-src="/img/works/2.jpg"
+            data-index="1"
+          ></figure>
+          <figure
+            class="gallery__item"
+            data-src="/img/works/3.jpg"
+            data-index="2"
+          ></figure>
+          <figure
+            class="gallery__item is-hidden"
+            data-src="/img/works/4.jpg"
+            data-index="3"
+          ></figure>
+          <figure
+            class="gallery__item is-hidden"
+            data-src="/img/works/5.jpg"
+            data-index="4"
+          ></figure>
+          <figure
+            class="gallery__item is-hidden"
+            data-src="/img/works/6.jpg"
+            data-index="5"
+          ></figure>
+          <figure
+            class="gallery__item is-hidden"
+            data-src="/img/works/7.jpg"
+            data-index="6"
+          ></figure>
+          <figure
+            class="gallery__item is-hidden"
+            data-src="/img/works/8.jpg"
+            data-index="7"
+          ></figure>
+          <figure
+            class="gallery__item is-hidden"
+            data-src="/img/works/9.jpg"
+            data-index="8"
+          ></figure>
+          <figure
+            class="gallery__item is-hidden"
+            data-src="/img/works/10.jpg"
+            data-index="9"
+          ></figure>
+        </div>
+
+        <div class="gallery__more">
+          <button class="btn btn--ghost" id="gallery-show-all" type="button">
+            Посмотреть все работы
+            <span class="gallery__count" id="gallery-count"></span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== GALLERY MODAL: GRID ===== -->
+    <div
+      class="gmodal"
+      id="gmodal-grid"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Все работы"
+      hidden
+    >
+      <div class="gmodal__overlay" data-close-gmodal></div>
+      <div class="gmodal__panel">
+        <div class="gmodal__head">
+          <h3 class="gmodal__title">Наши работы</h3>
+          <button class="gmodal__close" data-close-gmodal aria-label="Закрыть">
+            <svg
+              viewBox="0 0 24 24"
+              width="22"
+              height="22"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <line x1="18" y1="6" x2="6" y2="18" />
+              <line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
+          </button>
+        </div>
+        <div class="gmodal__grid" id="gmodal-grid-list"></div>
+      </div>
+    </div>
+
+    <!-- ===== GALLERY MODAL: LIGHTBOX ===== -->
+    <div
+      class="lightbox"
+      id="lightbox"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Просмотр фото"
+      hidden
+    >
+      <button class="lightbox__close" data-close-lightbox aria-label="Закрыть">
+        <svg
+          viewBox="0 0 24 24"
+          width="26"
+          height="26"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
+      </button>
+      <button
+        class="lightbox__nav lightbox__nav--prev"
+        data-lightbox-prev
+        aria-label="Предыдущее фото"
+      >
+        <svg
+          viewBox="0 0 24 24"
+          width="28"
+          height="28"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <polyline points="15 18 9 12 15 6" />
+        </svg>
+      </button>
+      <button
+        class="lightbox__nav lightbox__nav--next"
+        data-lightbox-next
+        aria-label="Следующее фото"
+      >
+        <svg
+          viewBox="0 0 24 24"
+          width="28"
+          height="28"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <polyline points="9 18 15 12 9 6" />
+        </svg>
+      </button>
+      <div class="lightbox__stage" id="lightbox-stage">
+        <img class="lightbox__img" id="lightbox-img" alt="" />
+      </div>
+      <div class="lightbox__counter" id="lightbox-counter"></div>
+    </div>
+
+    <!-- ===== CONTACT / CTA ===== -->
+    <section class="section cta" id="contact">
+      <div class="container cta__inner">
+        <div class="cta__text">
+          <h2 class="section__title">Обсудим ваш объект?</h2>
+          <p>
+            Оставьте заявку — перезвоним, бесплатно проконсультируем и
+            подготовим расчёт стоимости.
+          </p>
+        </div>
+
+        <div class="cta__contacts">
+          <a href="tel:+79010072227" class="cta__link">
+            <svg
+              viewBox="0 0 24 24"
+              width="20"
+              height="20"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path
+                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"
+              />
+            </svg>
+            +7 901 007-22-27
+          </a>
+          <a
+            href="https://vk.ru/proremontkrdsoshi"
+            target="_blank"
+            rel="noopener"
+            class="cta__link"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              width="20"
+              height="20"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                d="M21.6 7.2c.15-.5 0-.86-.7-.86h-2.32c-.6 0-.87.31-1.02.66 0 0-1.2 2.93-2.9 4.83-.55.55-.8.73-1.1.73-.15 0-.36-.18-.36-.68V7.2c0-.6-.17-.86-.66-.86H8.9c-.37 0-.6.27-.6.53 0 .57.85.7.94 2.31v3.49c0 .76-.14.9-.43.9-.8 0-2.74-2.94-3.9-6.3-.23-.66-.45-.93-1.06-.93H1.54c-.66 0-.79.31-.79.66 0 .63.8 3.74 3.74 7.85 1.96 2.8 4.72 4.32 7.23 4.32 1.51 0 1.7-.34 1.7-.93v-2.13c0-.69.15-.83.63-.83.36 0 .98.18 2.42 1.57 1.65 1.65 1.92 2.4 2.85 2.4h2.32c.66 0 .99-.34.8-1-.21-.66-.97-1.6-1.99-2.74-.55-.65-1.37-1.35-1.62-1.7-.36-.45-.26-.65 0-1.05 0 0 2.85-4.02 3.15-5.39z"
+              />
+            </svg>
+            Группа ВКонтакте
+          </a>
+          <button class="btn btn--primary" data-open-modal>
+            Оставить заявку
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+      <div class="container footer__inner">
+        <div class="footer__brand">
+          <img src="/logo.jpg" alt="Про-Ремонт" class="logo__img" />
+          <div>
+            <div class="logo__text">ПРО-РЕМОНТ</div>
+            <span class="logo__sub">Ремонт под ключ</span>
+            <p class="footer__small">
+              Ремонт квартир, домов и коммерческих помещений под&nbsp;ключ.
+            </p>
+          </div>
+        </div>
+        <div class="footer__col">
+          <a href="tel:+79010072227">+7 901 007-22-27</a>
+          <a
+            href="https://vk.ru/proremontkrdsoshi"
+            target="_blank"
+            rel="noopener"
+            >vk.ru/proremontkrdsoshi</a
+          >
+        </div>
+        <div class="footer__copy">
+          © <span id="year"></span> Про-Ремонт. Все права защищены.
+        </div>
+      </div>
+    </footer>
+
+    <!-- ===== MODAL ===== -->
+    <div
+      class="modal"
+      id="modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modal-title"
+      hidden
+    >
+      <div class="modal__overlay" data-close-modal></div>
+      <div class="modal__dialog">
+        <button class="modal__close" data-close-modal aria-label="Закрыть">
+          <svg
+            viewBox="0 0 24 24"
+            width="22"
+            height="22"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        </button>
+
+        <h3 class="modal__title" id="modal-title">Оставить заявку</h3>
+        <p class="modal__sub">Перезвоним в течение 15 минут в рабочее время.</p>
+
+        <form class="form" id="contact-form" novalidate>
+          <label class="field">
+            <span class="field__label">Имя</span>
+            <input
+              class="field__input"
+              type="text"
+              name="name"
+              required
+              minlength="2"
+              placeholder="Как к вам обращаться"
+            />
+          </label>
+
+          <label class="field">
+            <span class="field__label">Телефон</span>
+            <input
+              class="field__input"
+              type="tel"
+              name="phone"
+              required
+              inputmode="tel"
+              autocomplete="tel"
+              pattern="\+7\d{10}"
+              placeholder="+7 (___) ___-__-__"
+              title="Введите российский номер в формате +7XXXXXXXXXX"
+            />
+          </label>
+
+          <label class="field">
+            <span class="field__label">Вариант расчёта</span>
+            <select class="field__input" name="variant">
+              <option value="">— выберите —</option>
+              <option>Только работы</option>
+              <option>Работы + черновой материал</option>
+              <option>Работы + черновой и чистовой материал</option>
+              <option>Работы + материалы + мебель</option>
+            </select>
+          </label>
+
+          <label class="field">
+            <span class="field__label">Опишите задачу</span>
+            <textarea
+              class="field__input"
+              name="message"
+              rows="4"
+              placeholder="Площадь, адрес, пожелания, сроки"
+            ></textarea>
+          </label>
+
+          <button class="btn btn--primary btn--full" type="submit">
+            Отправить заявку
+          </button>
+          <p class="form__note">
+            Нажимая кнопку, вы соглашаетесь на обработку персональных данных.
+          </p>
+          <p
+            class="form__status"
+            id="form-status"
+            role="status"
+            aria-live="polite"
+          ></p>
+        </form>
+      </div>
+    </div>
+
+    <script src="/js/main.js"></script>
+  </body>
+</html>
