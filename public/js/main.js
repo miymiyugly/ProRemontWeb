@@ -5,6 +5,52 @@
   const yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
+  // ===== Toast notifications =====
+  const toastsRoot = document.getElementById("toasts");
+  const TOAST_ICONS = {
+    success:
+      '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>',
+    error:
+      '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>',
+    info: '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>',
+  };
+
+  function toast({
+    type = "info",
+    title = "",
+    text = "",
+    duration = 4500,
+  } = {}) {
+    if (!toastsRoot) return;
+    const el = document.createElement("div");
+    el.className = `toast toast--${type}`;
+    el.setAttribute("role", type === "error" ? "alert" : "status");
+    el.innerHTML = `
+      <span class="toast__icon">${TOAST_ICONS[type] || TOAST_ICONS.info}</span>
+      <div class="toast__body">
+        ${title ? `<p class="toast__title"></p>` : ""}
+        ${text ? `<p class="toast__text"></p>` : ""}
+      </div>
+      <button class="toast__close" aria-label="Закрыть">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>`;
+    if (title) el.querySelector(".toast__title").textContent = title;
+    if (text) el.querySelector(".toast__text").textContent = text;
+
+    toastsRoot.appendChild(el);
+    requestAnimationFrame(() => el.classList.add("is-show"));
+
+    let timer;
+    const dismiss = () => {
+      clearTimeout(timer);
+      el.classList.remove("is-show");
+      el.classList.add("is-hide");
+      el.addEventListener("transitionend", () => el.remove(), { once: true });
+    };
+    el.querySelector(".toast__close").addEventListener("click", dismiss);
+    if (duration > 0) timer = setTimeout(dismiss, duration);
+  }
+
   // ===== Mobile nav =====
   const burger = document.getElementById("burger");
   const nav = document.getElementById("nav");
@@ -108,26 +154,28 @@
 
   // ===== Form submit =====
   const form = document.getElementById("contact-form");
-  const status = document.getElementById("form-status");
 
   if (form) {
     form.addEventListener("submit", async (e) => {
       e.preventDefault();
-      status.textContent = "";
-      status.className = "form__status";
 
       const data = Object.fromEntries(new FormData(form).entries());
 
       if (!data.name || data.name.trim().length < 2) {
-        status.textContent = "Пожалуйста, укажите имя.";
-        status.classList.add("is-error");
+        toast({
+          type: "error",
+          title: "Укажите имя",
+          text: "Пожалуйста, введите ваше имя — минимум 2 символа.",
+        });
         return;
       }
       const phoneE164 = getRuPhoneE164(data.phone);
       if (!phoneE164) {
-        status.textContent =
-          "Номер должен быть в российском формате: +7XXXXXXXXXX.";
-        status.classList.add("is-error");
+        toast({
+          type: "error",
+          title: "Некорректный номер",
+          text: "Введите номер в российском формате: +7XXXXXXXXXX.",
+        });
         phoneInput?.focus();
         return;
       }
@@ -145,19 +193,26 @@
         });
         const json = await res.json().catch(() => ({}));
         if (res.ok && json.ok) {
-          status.textContent =
-            "Заявка отправлена! Перезвоним в ближайшее время.";
-          status.classList.add("is-success");
+          toast({
+            type: "success",
+            title: "Заявка отправлена",
+            text: "Перезвоним в ближайшее время.",
+          });
           form.reset();
-          setTimeout(closeModal, 1800);
+          closeModal();
         } else {
-          status.textContent =
-            json.error || "Не удалось отправить. Попробуйте позже.";
-          status.classList.add("is-error");
+          toast({
+            type: "error",
+            title: "Ошибка отправки",
+            text: json.error || "Не удалось отправить. Попробуйте позже.",
+          });
         }
       } catch {
-        status.textContent = "Ошибка сети. Попробуйте позже.";
-        status.classList.add("is-error");
+        toast({
+          type: "error",
+          title: "Нет соединения",
+          text: "Проверьте интернет и попробуйте ещё раз.",
+        });
       } finally {
         submitBtn.disabled = false;
         submitBtn.style.opacity = "";
