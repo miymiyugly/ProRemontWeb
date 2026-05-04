@@ -206,10 +206,17 @@ textarea {
   inset: 0 0 auto 0;
   height: var(--header-h);
   z-index: 50;
-  background: rgba(10, 10, 10, 0.78);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  background: rgba(10, 10, 10, 0.92);
   border-bottom: 1px solid var(--border-2);
+}
+@supports (
+  (backdrop-filter: blur(14px)) or (-webkit-backdrop-filter: blur(14px))
+) {
+  .header {
+    background: rgba(10, 10, 10, 0.72);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+  }
 }
 .header__inner {
   display: flex;
@@ -647,6 +654,14 @@ textarea {
   background: rgba(26, 26, 26, 0.7);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
+  text-align: left;
+}
+.cta__text {
+  text-align: left;
+}
+.cta__text .section__title {
+  text-align: left;
+  margin: 0;
 }
 .cta__text p {
   color: var(--muted);
